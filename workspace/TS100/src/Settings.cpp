@@ -72,23 +72,23 @@ uint8_t lookupVoltageLevel(uint8_t level) {
 }
 void resetSettings() {
 
-	systemSettings.SleepTemp = 150;    //Temperature the iron sleeps at - default 150.0 C
-	systemSettings.SleepTime = 6;    //How many seconds/minutes we wait until going to sleep - default 1 min
-	systemSettings.SolderingTemp = 320;    //Default soldering temp is 320.0 C
-	systemSettings.cutoutSetting = 0;			//default to no cut-off voltage
-	systemSettings.version = SETTINGSVERSION;			//Store the version number to allow for easier upgrades
-	systemSettings.detailedSoldering = 0;			// Detailed soldering screen
-	systemSettings.detailedIDLE=0;					// Detailed idle screen (off for first time users)
-	systemSettings.OrientationMode = 2;				//Default to automatic
-	systemSettings.sensitivity = 7;				//Default high sensitivity
-	systemSettings.voltageDiv = 117;			//Default divider from schematic
-	systemSettings.ShutdownTime = 10;			//How many minutes until the unit turns itself off
-	systemSettings.boostModeEnabled = 1;		//Default to safe, with no boost mode
-	systemSettings.BoostTemp = 420;				//default to 400C
-	systemSettings.autoStartMode = 0;				//Auto start off for safety
-	systemSettings.coolingTempBlink = 0;				//Blink the temperature on the cooling screen when its > 50C
-	systemSettings.CalibrationOffset = 10;		//This appears to be quite close for both of my tips, in both of my handles
-	systemSettings.temperatureInF = 0;			//default to 0
+	systemSettings.SleepTemp = 150;             //Temperature the iron sleeps at - default 150.0 C
+	systemSettings.SleepTime = 6;               //How many seconds/minutes we wait until going to sleep - default 1 min
+	systemSettings.SolderingTemp = 320;         // Default soldering temp is 320.0 C
+	systemSettings.cutoutSetting = 0;           // Default to no cut-off voltage
+	systemSettings.version = SETTINGSVERSION;   // Store the version number to allow for easier upgrades
+	systemSettings.detailedSoldering = 1;		// Detailed soldering screen (default on)
+	systemSettings.detailedIDLE = 1;            // Detailed idle screen (default on)
+	systemSettings.OrientationMode = 0;         // Default to right-handed
+	systemSettings.sensitivity = 7;             // Default high sensitivity
+	systemSettings.voltageDiv = 117;            // Default divider from schematic
+	systemSettings.ShutdownTime = 10;           // How many minutes until the unit turns itself off
+	systemSettings.boostModeEnabled = 1;        // Default to unsafe, with boost mode enabled
+	systemSettings.BoostTemp = 420;	            // Default to 420 C boost temperature
+	systemSettings.autoStartMode = 0;           // Auto start off for safety
+	systemSettings.coolingTempBlink = 1;        // Blink the temperature on the cooling screen when its > 50C
+	systemSettings.CalibrationOffset = 10;      // This appears to be quite close for both of my tips, in both of my handles
+	systemSettings.temperatureInF = 0;          // Default in Fahrenheit
 	saveSettings();
 }
 
