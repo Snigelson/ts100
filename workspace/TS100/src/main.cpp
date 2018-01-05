@@ -315,7 +315,7 @@ static void gui_settingsMenu() {
     lcd.clearScreen();
     lcd.setCursor(0, 0);
 
-    if (HAL_GetTick() - lastButtonTime < 4000) {
+    if (HAL_GetTick() - lastButtonTime < 2500) {
       settingsMenu[currentScreen].draw.func();
 
     } else {
