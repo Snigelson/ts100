@@ -411,7 +411,7 @@ static int gui_showTipTempWarning() {
       }
     }
     if (systemSettings.coolingTempBlink && tipTemp > 50) {
-      if (HAL_GetTick() % 500 < 250) lcd.clearScreen();
+      if (HAL_GetTick() % 500 < 100) lcd.clearScreen();
     }
     lcd.refresh();
     ButtonState buttons = getButtonState();
