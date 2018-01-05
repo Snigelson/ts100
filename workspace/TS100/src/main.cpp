@@ -821,13 +821,13 @@ void startPIDTask(void const *argument) {
   int32_t kp, ki, kd, kb;
   int32_t backoffOverflow = 0;
   kp = 20;
-  ki = 50;
-  kd = 40;
+  ki = 25;
+  kd = 30;
   kb = 0;
   // REMEBER ^^^^ These constants are backwards
   // They act as dividers, so to 'increase' a P term, you make the number
   // smaller.
-  const int32_t itermMax = 40;
+  const int32_t itermMax = 250;
   for (;;) {
     uint16_t rawTemp = getTipRawTemp(1);  // get instantaneous reading
     if (currentlyActiveTemperatureTarget) {
