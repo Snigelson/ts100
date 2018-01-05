@@ -385,17 +385,17 @@ static int gui_showTipTempWarning() {
     lcd.setCursor(0, 0);
     if (systemSettings.detailedSoldering) {
       lcd.setFont(1);
-      lcd.print(WarningAdvancedString);
-      lcd.setCursor(0, 8);
-      lcd.print("Tip Temp: ");
-
+      lcd.print("Tip: ");
       if (systemSettings.temperatureInF) {
         lcd.printNumber(tipMeasurementToF(getTipRawTemp(0)), 3);
-        lcd.print("F");
       } else {
         lcd.printNumber(tipMeasurementToC(getTipRawTemp(0)), 3);
-        lcd.print("C");
       }
+      lcd.print(" ");
+      lcd.print("Set:");
+      lcd.printNumber(systemSettings.SolderingTemp, 3);
+      lcd.setCursor(0, 8);
+      lcd.print(WarningAdvancedString);
     } else {
       lcd.setFont(0);
       lcd.drawArea(0, 0, 24, 16, WarningBlock24);
