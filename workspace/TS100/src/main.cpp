@@ -420,7 +420,7 @@ static int gui_showTipTempWarning() {
     else if (buttons == BUTTON_B_SHORT || buttons == BUTTON_BOTH)
       return 0;
 
-    if (tipTemp < 30) return 0;
+    if (tipTemp < 50) return 0;
 
     HAL_IWDG_Refresh(&hiwdg);
     GUIDelay();
